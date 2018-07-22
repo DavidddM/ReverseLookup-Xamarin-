@@ -1,0 +1,17 @@
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\obj\Debug\ReverseLookup.csprojResolveAssemblyReference.cache
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\obj\Debug\ReverseLookup.csproj.CoreCompileInputs.cache
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\bin\Debug\ReverseLookup.dll
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\bin\Debug\ReverseLookup.pdb
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\bin\Debug\ReverseLookup.ReverseLookup.apk
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\bin\Debug\ReverseLookup.ReverseLookup-Signed.apk
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\bin\Debug\Newtonsoft.Json.dll
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\bin\Debug\Newtonsoft.Json.xml
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\obj\Debug\ReverseLookup.dll
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\obj\Debug\ReverseLookup.pdb
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\obj\Debug\android\bin\ReverseLookup.ReverseLookup.apk
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\obj\Debug\res\layout\main.xml
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\obj\Debug\res\values\strings.xml
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\obj\Debug\R.cs.flag
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\obj\Debug\uploadflags.txt
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\bin\Debug\ReverseLookup.dll.mdb
+c:\users\david\source\repos\ReverseLookup\ReverseLookup\obj\Debug\android\assets\ReverseLookup.dll.mdb
