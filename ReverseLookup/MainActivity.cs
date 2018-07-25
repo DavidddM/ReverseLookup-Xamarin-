@@ -1,10 +1,10 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
-using System.Collections.Specialized;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.Text;
+using System.Collections.Specialized;
 
 namespace ReverseLookup
 {
@@ -19,12 +19,22 @@ namespace ReverseLookup
             tw.Text = str;
         }
 
-        private NameValueCollection GetData()
+        private string GetNumber()
         {
             EditText editText = FindViewById<EditText>(Resource.Id.editText1);
-            var data = new NameValueCollection();
-            data["number"] = editText.Text;
+            return editText.Text;
+        }
+
+        private T GetData<T>() where T : new()
+        {
+            dynamic data = new T();
+            data["number"] = GetNumber();
             return data;
+        }
+
+        private string GetJSONString()
+        {
+            return $"{{\"number\":\"{GetNumber()}\"}}";
         }
 
         private List<string> ParseData(string jsonString)
@@ -39,7 +49,7 @@ namespace ReverseLookup
         private async void SearchButtonClick(object sender, System.EventArgs e)
         {
             APIClient client = new APIClient(API);
-            var data = GetData();
+            var data = GetData<NameValueCollection>();
 
             client.AsyncPost(data);
             var response = await client.Response;

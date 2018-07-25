@@ -3,24 +3,26 @@
 using System.Collections.Specialized;
 using System.Net;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace ReverseLookup
 {
     class APIClient
     {
-        public Uri ApiKey { get; private set; }
+        public Uri ApiUri { get; private set; }
         public Task<byte[]> Response { get; private set; }
 
-        public APIClient(Uri ApiKey)
+        public APIClient(Uri ApiUri)
         {
-            this.ApiKey = ApiKey;
+            this.ApiUri = ApiUri;
         }
 
         public void AsyncGet()
         {
             using (WebClient wc = new WebClient())
             {
-                Response = wc.DownloadDataTaskAsync(ApiKey);
+                Response = wc.DownloadDataTaskAsync(ApiUri);
             }
         }
 
@@ -28,8 +30,29 @@ namespace ReverseLookup
         {
             using (WebClient wc = new WebClient())
             {
-                Response = wc.UploadValuesTaskAsync(ApiKey, data);
+                Response = wc.UploadValuesTaskAsync(ApiUri, data);
             }
+        }
+
+        public void AsyncPost(string jsonString)
+        {
+            var dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonString);
+            NameValueCollection data = new NameValueCollection(dict.Count);
+            foreach (var d in dict)
+            {
+                data.Add(d.Key, d.Value);
+            }
+            AsyncPost(data);
+        }
+
+        public void AsyncPost(Dictionary<string, string> dict)
+        {
+            NameValueCollection data = new NameValueCollection(dict.Count);
+            foreach (var d in dict)
+            {
+                data.Add(d.Key, d.Value);
+            }
+            AsyncPost(data);
         }
     }
 }
